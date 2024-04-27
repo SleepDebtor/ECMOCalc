@@ -9,18 +9,24 @@
 /* Begin PBXBuildFile section */
 		243674C02BD9426A00640E5E /* ECMOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674BF2BD9426A00640E5E /* ECMOApp.swift */; };
 		243674C22BD9426A00640E5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674C12BD9426A00640E5E /* ContentView.swift */; };
-		243674C42BD9426A00640E5E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674C32BD9426A00640E5E /* Item.swift */; };
+		243674C42BD9426A00640E5E /* SaveScoreSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674C32BD9426A00640E5E /* SaveScoreSD.swift */; };
 		243674C62BD9426D00640E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243674C52BD9426D00640E5E /* Assets.xcassets */; };
 		243674C92BD9426D00640E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243674C82BD9426D00640E5E /* Preview Assets.xcassets */; };
+		243674D02BD9B44400640E5E /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674CF2BD9B44400640E5E /* CalculatorView.swift */; };
+		243674D22BDA9D9600640E5E /* SelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674D12BDA9D9600640E5E /* SelectionRow.swift */; };
+		243674D42BDAA53000640E5E /* ParametersSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674D32BDAA53000640E5E /* ParametersSD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		243674BC2BD9426A00640E5E /* ECMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		243674BF2BD9426A00640E5E /* ECMOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECMOApp.swift; sourceTree = "<group>"; };
 		243674C12BD9426A00640E5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		243674C32BD9426A00640E5E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		243674C32BD9426A00640E5E /* SaveScoreSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveScoreSD.swift; sourceTree = "<group>"; };
 		243674C52BD9426D00640E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		243674C82BD9426D00640E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		243674CF2BD9B44400640E5E /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		243674D12BDA9D9600640E5E /* SelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionRow.swift; sourceTree = "<group>"; };
+		243674D32BDAA53000640E5E /* ParametersSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersSD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,10 @@
 			children = (
 				243674BF2BD9426A00640E5E /* ECMOApp.swift */,
 				243674C12BD9426A00640E5E /* ContentView.swift */,
-				243674C32BD9426A00640E5E /* Item.swift */,
+				243674CF2BD9B44400640E5E /* CalculatorView.swift */,
+				243674D12BDA9D9600640E5E /* SelectionRow.swift */,
+				243674C32BD9426A00640E5E /* SaveScoreSD.swift */,
+				243674D32BDAA53000640E5E /* ParametersSD.swift */,
 				243674C52BD9426D00640E5E /* Assets.xcassets */,
 				243674C72BD9426D00640E5E /* Preview Content */,
 			);
@@ -140,8 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				243674D22BDA9D9600640E5E /* SelectionRow.swift in Sources */,
+				243674D02BD9B44400640E5E /* CalculatorView.swift in Sources */,
+				243674D42BDAA53000640E5E /* ParametersSD.swift in Sources */,
 				243674C22BD9426A00640E5E /* ContentView.swift in Sources */,
-				243674C42BD9426A00640E5E /* Item.swift in Sources */,
+				243674C42BD9426A00640E5E /* SaveScoreSD.swift in Sources */,
 				243674C02BD9426A00640E5E /* ECMOApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
