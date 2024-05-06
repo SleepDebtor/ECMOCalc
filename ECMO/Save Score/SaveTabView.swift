@@ -13,7 +13,7 @@ struct SaveTabView: View {
     var body: some View {
 		TabView {
 			CalculatorView(saveScore: saveScore)
-			Text("Page 2")
+			SaveInfoView(score: saveScore.score)
 		}
 		.tabViewStyle(.page)
     }

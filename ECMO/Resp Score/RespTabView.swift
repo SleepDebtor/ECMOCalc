@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct RespTabView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    RespTabView()
+	@Bindable var respScore: RespScore
+	
+	var body: some View {
+		TabView {
+			RespCalcView(item: respScore)
+			RespInfoView(score: respScore.score)
+		}
+		.tabViewStyle(.page)
+	}
 }

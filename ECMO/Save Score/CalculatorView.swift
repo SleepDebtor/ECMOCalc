@@ -23,7 +23,7 @@ struct CalculatorView: View {
 			Spacer()
 			Text("Risk Class \(patient.score.riskClass)")
 			Spacer()
-			Text("Survival \(patient.score.survivalPercent)")
+			Text("Survival \(patient.score.survivalPercent)%")
 		}
 		.padding(.horizontal)
 		Text("")

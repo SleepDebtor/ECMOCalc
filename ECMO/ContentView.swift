@@ -22,7 +22,7 @@ struct ContentView: View {
 	}
 
     var body: some View {
-		NavigationStack(path: $navPath)  {
+		NavigationStack(path: $navPath) {
             List {
 				ForEach(allScores, id: \.id) { item in
 					NavigationLink(value: item) {
@@ -32,10 +32,10 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
             }
 			.navigationDestination(for: SaveScore.self) { i in
-				CalculatorView(item: i)
+				SaveTabView(saveScore: i)
 			}
 			.navigationDestination(for: RespScore.self) { i in
-				RespCalcView(item: i)
+				RespTabView(respScore: i)
 			}
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -80,6 +80,6 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+// #Preview {
+//    ContentView()
+// }

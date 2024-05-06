@@ -19,7 +19,11 @@
 		243674D82BE517DF00640E5E /* RespCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674D72BE517DF00640E5E /* RespCalcView.swift */; };
 		243674DC2BE5489F00640E5E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674DB2BE5489F00640E5E /* Protocols.swift */; };
 		243674DE2BE54EBA00640E5E /* ScoreStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674DD2BE54EBA00640E5E /* ScoreStruct.swift */; };
-		243674E12BE6711E00640E5E /* .swiftlint.yml..swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674E02BE6711E00640E5E /* .swiftlint.yml..swift */; };
+		243674E32BE6782C00640E5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 243674E22BE6782C00640E5E /* .swiftlint.yml */; };
+		243674EB2BE8144B00640E5E /* SaveInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674EA2BE8144B00640E5E /* SaveInfoView.swift */; };
+		243674ED2BE8145E00640E5E /* SaveTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674EC2BE8145E00640E5E /* SaveTabView.swift */; };
+		243674EF2BE88AF700640E5E /* RespTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674EE2BE88AF700640E5E /* RespTabView.swift */; };
+		243674F12BE88B1300640E5E /* RespInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674F02BE88B1300640E5E /* RespInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +40,11 @@
 		243674D72BE517DF00640E5E /* RespCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespCalcView.swift; sourceTree = "<group>"; };
 		243674DB2BE5489F00640E5E /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		243674DD2BE54EBA00640E5E /* ScoreStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStruct.swift; sourceTree = "<group>"; };
-		243674E02BE6711E00640E5E /* .swiftlint.yml..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .swiftlint.yml..swift; sourceTree = "<group>"; };
+		243674E22BE6782C00640E5E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		243674EA2BE8144B00640E5E /* SaveInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveInfoView.swift; sourceTree = "<group>"; };
+		243674EC2BE8145E00640E5E /* SaveTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTabView.swift; sourceTree = "<group>"; };
+		243674EE2BE88AF700640E5E /* RespTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespTabView.swift; sourceTree = "<group>"; };
+		243674F02BE88B1300640E5E /* RespInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,16 +79,14 @@
 			children = (
 				243674BF2BD9426A00640E5E /* ECMOApp.swift */,
 				243674C12BD9426A00640E5E /* ContentView.swift */,
-				243674CF2BD9B44400640E5E /* CalculatorView.swift */,
-				243674D72BE517DF00640E5E /* RespCalcView.swift */,
+				243674E82BE812A600640E5E /* Save Score */,
+				243674E92BE812FB00640E5E /* Resp Score */,
 				243674D12BDA9D9600640E5E /* SelectionRow.swift */,
 				243674DD2BE54EBA00640E5E /* ScoreStruct.swift */,
 				243674DB2BE5489F00640E5E /* Protocols.swift */,
-				243674D52BE491C800640E5E /* RespScoreSD.swift */,
-				243674C32BD9426A00640E5E /* SaveScoreSD.swift */,
 				243674D32BDAA53000640E5E /* ParametersSD.swift */,
 				243674C52BD9426D00640E5E /* Assets.xcassets */,
-				243674E02BE6711E00640E5E /* .swiftlint.yml..swift */,
+				243674E22BE6782C00640E5E /* .swiftlint.yml */,
 				243674C72BD9426D00640E5E /* Preview Content */,
 			);
 			path = ECMO;
@@ -92,6 +98,28 @@
 				243674C82BD9426D00640E5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		243674E82BE812A600640E5E /* Save Score */ = {
+			isa = PBXGroup;
+			children = (
+				243674CF2BD9B44400640E5E /* CalculatorView.swift */,
+				243674EA2BE8144B00640E5E /* SaveInfoView.swift */,
+				243674EC2BE8145E00640E5E /* SaveTabView.swift */,
+				243674C32BD9426A00640E5E /* SaveScoreSD.swift */,
+			);
+			path = "Save Score";
+			sourceTree = "<group>";
+		};
+		243674E92BE812FB00640E5E /* Resp Score */ = {
+			isa = PBXGroup;
+			children = (
+				243674D72BE517DF00640E5E /* RespCalcView.swift */,
+				243674D52BE491C800640E5E /* RespScoreSD.swift */,
+				243674EE2BE88AF700640E5E /* RespTabView.swift */,
+				243674F02BE88B1300640E5E /* RespInfoView.swift */,
+			);
+			path = "Resp Score";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				243674E32BE6782C00640E5E /* .swiftlint.yml in Resources */,
 				243674C92BD9426D00640E5E /* Preview Assets.xcassets in Resources */,
 				243674C62BD9426D00640E5E /* Assets.xcassets in Resources */,
 			);
@@ -177,7 +206,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -188,13 +217,16 @@
 			files = (
 				243674DC2BE5489F00640E5E /* Protocols.swift in Sources */,
 				243674D22BDA9D9600640E5E /* SelectionRow.swift in Sources */,
+				243674EB2BE8144B00640E5E /* SaveInfoView.swift in Sources */,
 				243674D02BD9B44400640E5E /* CalculatorView.swift in Sources */,
 				243674D62BE491C800640E5E /* RespScoreSD.swift in Sources */,
 				243674D42BDAA53000640E5E /* ParametersSD.swift in Sources */,
 				243674DE2BE54EBA00640E5E /* ScoreStruct.swift in Sources */,
+				243674EF2BE88AF700640E5E /* RespTabView.swift in Sources */,
 				243674C22BD9426A00640E5E /* ContentView.swift in Sources */,
-				243674E12BE6711E00640E5E /* .swiftlint.yml..swift in Sources */,
 				243674D82BE517DF00640E5E /* RespCalcView.swift in Sources */,
+				243674F12BE88B1300640E5E /* RespInfoView.swift in Sources */,
+				243674ED2BE8145E00640E5E /* SaveTabView.swift in Sources */,
 				243674C42BD9426A00640E5E /* SaveScoreSD.swift in Sources */,
 				243674C02BD9426A00640E5E /* ECMOApp.swift in Sources */,
 			);
@@ -240,7 +272,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -303,7 +335,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

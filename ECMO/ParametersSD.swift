@@ -22,7 +22,7 @@ final class Parameters {
 		return "\(name) (\(possibleValue)) "
 	}
 	var displayScore: String {
-		if self.score == 0  {
+		if self.score == 0 {
 			return "  "
 		} else if self.score < 0 {
 			return " \(score)"
@@ -45,4 +45,3 @@ final class Parameters {
 		self.explanation = explanation
 	}
 }
-
