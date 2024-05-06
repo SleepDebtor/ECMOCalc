@@ -10,46 +10,71 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [SaveScore]
+    @Query private var vaReview: [SaveScore]
+	@Query private var vvReview: [RespScore]
+	@State private var navPath = NavigationPath()
+	
+	var allScores: [any TheScore] {
+		let returnArray: [any TheScore] = vaReview + vvReview
+		return returnArray.sorted {
+			$0.timestamp > $1.timestamp
+		}
+	}
 
     var body: some View {
-        NavigationSplitView {
+		NavigationStack(path: $navPath)  {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        CalculatorView(patient: item)
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+				ForEach(allScores, id: \.id) { item in
+					NavigationLink(value: item) {
+						Text("\(item.scoreDisplay)")
                     }
                 }
                 .onDelete(perform: deleteItems)
             }
+			.navigationDestination(for: SaveScore.self) { i in
+				CalculatorView(item: i)
+			}
+			.navigationDestination(for: RespScore.self) { i in
+				RespCalcView(item: i)
+			}
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: addAV) {
+                        Label("Add VA", systemImage: "heart")
                     }
                 }
+				ToolbarItem {
+					Button(action: addVV) {
+						Label("Add VV", systemImage: "lungs")
+					}
+				}
             }
-        } detail: {
-            Text("Select an item")
         }
     }
 
-    private func addItem() {
+    private func addAV() {
         withAnimation {
             let newItem = SaveScore()
             modelContext.insert(newItem)
+			navPath.append(newItem)
         }
     }
+	
+	private func addVV() {
+		withAnimation {
+			let newItem = RespScore()
+			modelContext.insert(newItem)
+			navPath.append(newItem)
+		}
+	}
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(vaReview[index])
             }
         }
     }

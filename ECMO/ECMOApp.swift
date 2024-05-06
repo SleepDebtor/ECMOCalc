@@ -12,7 +12,8 @@ import SwiftData
 struct ECMOApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-			SaveScore.self
+			SaveScore.self,
+			RespScore.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

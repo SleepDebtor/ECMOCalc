@@ -9,10 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct SelectionRow: View {
-	@State var someField: Parameters
+	@Binding var someField: Parameters
 	
-	init (for someField: Parameters) {
-		self.someField = someField
+	init (for someField: Binding<Parameters>) {
+		_someField = someField
 	}
 	
     var body: some View {
@@ -24,7 +24,7 @@ struct SelectionRow: View {
     }
 }
 
-#Preview {
-	SelectionRow(for: Parameters.example)
-		.modelContainer(for: SaveScore.self, inMemory: true)
-}
+//#Preview {
+//	SelectionRow(for: Parameters.example)
+//		.modelContainer(for: SaveScore.self, inMemory: true)
+//}

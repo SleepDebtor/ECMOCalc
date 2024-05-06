@@ -15,6 +15,11 @@
 		243674D02BD9B44400640E5E /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674CF2BD9B44400640E5E /* CalculatorView.swift */; };
 		243674D22BDA9D9600640E5E /* SelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674D12BDA9D9600640E5E /* SelectionRow.swift */; };
 		243674D42BDAA53000640E5E /* ParametersSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674D32BDAA53000640E5E /* ParametersSD.swift */; };
+		243674D62BE491C800640E5E /* RespScoreSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674D52BE491C800640E5E /* RespScoreSD.swift */; };
+		243674D82BE517DF00640E5E /* RespCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674D72BE517DF00640E5E /* RespCalcView.swift */; };
+		243674DC2BE5489F00640E5E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674DB2BE5489F00640E5E /* Protocols.swift */; };
+		243674DE2BE54EBA00640E5E /* ScoreStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674DD2BE54EBA00640E5E /* ScoreStruct.swift */; };
+		243674E12BE6711E00640E5E /* .swiftlint.yml..swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674E02BE6711E00640E5E /* .swiftlint.yml..swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		243674CF2BD9B44400640E5E /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		243674D12BDA9D9600640E5E /* SelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionRow.swift; sourceTree = "<group>"; };
 		243674D32BDAA53000640E5E /* ParametersSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersSD.swift; sourceTree = "<group>"; };
+		243674D52BE491C800640E5E /* RespScoreSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespScoreSD.swift; sourceTree = "<group>"; };
+		243674D72BE517DF00640E5E /* RespCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespCalcView.swift; sourceTree = "<group>"; };
+		243674DB2BE5489F00640E5E /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		243674DD2BE54EBA00640E5E /* ScoreStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStruct.swift; sourceTree = "<group>"; };
+		243674E02BE6711E00640E5E /* .swiftlint.yml..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .swiftlint.yml..swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +72,15 @@
 				243674BF2BD9426A00640E5E /* ECMOApp.swift */,
 				243674C12BD9426A00640E5E /* ContentView.swift */,
 				243674CF2BD9B44400640E5E /* CalculatorView.swift */,
+				243674D72BE517DF00640E5E /* RespCalcView.swift */,
 				243674D12BDA9D9600640E5E /* SelectionRow.swift */,
+				243674DD2BE54EBA00640E5E /* ScoreStruct.swift */,
+				243674DB2BE5489F00640E5E /* Protocols.swift */,
+				243674D52BE491C800640E5E /* RespScoreSD.swift */,
 				243674C32BD9426A00640E5E /* SaveScoreSD.swift */,
 				243674D32BDAA53000640E5E /* ParametersSD.swift */,
 				243674C52BD9426D00640E5E /* Assets.xcassets */,
+				243674E02BE6711E00640E5E /* .swiftlint.yml..swift */,
 				243674C72BD9426D00640E5E /* Preview Content */,
 			);
 			path = ECMO;
@@ -89,6 +104,7 @@
 				243674B82BD9426A00640E5E /* Sources */,
 				243674B92BD9426A00640E5E /* Frameworks */,
 				243674BA2BD9426A00640E5E /* Resources */,
+				243674DF2BE66FDF00640E5E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -144,15 +160,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		243674DF2BE66FDF00640E5E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		243674B82BD9426A00640E5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				243674DC2BE5489F00640E5E /* Protocols.swift in Sources */,
 				243674D22BDA9D9600640E5E /* SelectionRow.swift in Sources */,
 				243674D02BD9B44400640E5E /* CalculatorView.swift in Sources */,
+				243674D62BE491C800640E5E /* RespScoreSD.swift in Sources */,
 				243674D42BDAA53000640E5E /* ParametersSD.swift in Sources */,
+				243674DE2BE54EBA00640E5E /* ScoreStruct.swift in Sources */,
 				243674C22BD9426A00640E5E /* ContentView.swift in Sources */,
+				243674E12BE6711E00640E5E /* .swiftlint.yml..swift in Sources */,
+				243674D82BE517DF00640E5E /* RespCalcView.swift in Sources */,
 				243674C42BD9426A00640E5E /* SaveScoreSD.swift in Sources */,
 				243674C02BD9426A00640E5E /* ECMOApp.swift in Sources */,
 			);

@@ -4,27 +4,33 @@
 //
 //  Created by Michael Lazar on 4/24/24.
 //
+/*
+ The SAVE Score has been developed by ELSO and The Department of Intensive Care at The Alfred Hospital, Melbourne. It is designed to assist prediction of survival for adult patients undergoing Extra-Corporeal Membrane Oxygenation for refractory cardiogenic shock. It should not be considered a substitute for clinical assessment.
+
+ For more information see: Predicting survival after ECMO for refractory cardiogenic shock: the survival after veno-arterial-ECMO (SAVE)-score
+ */
 
 import Foundation
 import SwiftData
 
 @Model
-final class SaveScore: ObservableObject {
+final class SaveScore {
+	let id = UUID()
 	
 	enum AgeRange: String, Codable, CaseIterable, Identifiable {
 		var id: Self { self }
-		case age18_38 = "18–38"
-		case age39_52 = "39–52"
-		case age53_62 = "53–62"
+		case age18to38 = "18–38"
+		case age39to52 = "39–52"
+		case age53to62 = "53–62"
 		case ageGreater63 = ">63"
 		
 		var score: Int {
 			switch self {
-			case .age18_38:
+			case .age18to38:
 				return 7
-			case .age39_52:
+			case .age39to52:
 				return 4
-			case .age53_62:
+			case .age53to62:
 				return 3
 			case .ageGreater63:
 				return 0
@@ -38,14 +44,14 @@ final class SaveScore: ObservableObject {
 	enum WeightRange: String, Codable, CaseIterable, Identifiable {
 		var id: Self { self }
 		case weightLessThan65kg = "<65"
-		case weight65_89Kg = "65-89"
+		case weight65to89Kg = "65-89"
 		case weightGreaterThan89Kg = ">89Kg"
 		
 		var score: Int {
 			switch self {
 			case .weightLessThan65kg:
 				return 1
-			case .weight65_89Kg:
+			case .weight65to89Kg:
 				return 2
 			case .weightGreaterThan89Kg:
 				return 0
@@ -59,14 +65,14 @@ final class SaveScore: ObservableObject {
 	enum IntubationDuaration: String, Codable, CaseIterable, Identifiable {
 		var id: Self { self }
 		case durationlessThan10Hours = "<10"
-		case duration11_29Hours = "11-29"
+		case duration11to29Hours = "11-29"
 		case durationGreaterThan30 = ">30"
 		
 		var score: Int {
 			switch self {
 			case .durationlessThan10Hours:
 				return 0
-			case .duration11_29Hours:
+			case .duration11to29Hours:
 				return -2
 			case .durationGreaterThan30:
 				return -4
@@ -75,6 +81,10 @@ final class SaveScore: ObservableObject {
 		var displayName: String {
 			return "\(self.rawValue) (\(self.score))"
 		}
+	}
+	
+	var scoreDisplay: String {
+		return "❤️ Save Score \(score.score), Class: \(score.riskClass) Survival \(score.survivalPercent)?"
 	}
 //
 //	func ageValue (forAgeRange age: AgeRange) -> Int {
@@ -90,7 +100,7 @@ final class SaveScore: ObservableObject {
 //		}
 //	}
 	
-/// Organ Failurer
+// Organ Failurer
 	
 	// Shock Dx Group
 	var myocarditis: Parameters
@@ -120,13 +130,7 @@ final class SaveScore: ObservableObject {
 //	var age: Int?
 //	var weightKg: Double?
 	
-	struct Score: Codable {
-		var score: Int = 0
-		var riskClass = ""
-		var survivalPercent = ""
-	}
-	
-	var saveScore: Score {
+	var score: Score {
 		var score = -6 // constant value
 		/// Shock Dx Group
 		score += myocarditis.score
@@ -201,30 +205,30 @@ final class SaveScore: ObservableObject {
 		// Age and weight ranges
 		if let age {
 			switch age {
-			case ...17: self.ageRange = .age18_38
-			case 18...38: self.ageRange = .age18_38
-			case 39...52: self.ageRange = .age39_52
-			case 53...62: self.ageRange = .age53_62
+			case ...17: self.ageRange = .age18to38
+			case 18...38: self.ageRange = .age18to38
+			case 39...52: self.ageRange = .age39to52
+			case 53...62: self.ageRange = .age53to62
 			case 63...: self.ageRange = .ageGreater63
 			default:
 				print("Unknow age")
 				self.ageRange = .ageGreater63
 			}
 		} else {
-			self.ageRange = AgeRange.age18_38
+			self.ageRange = AgeRange.age18to38
 		}
 		
 		if let weightKg {
 			switch weightKg {
 			case ...65: self.weightRange = .weightLessThan65kg
-			case 65...89: self.weightRange = .weight65_89Kg
+			case 65...89: self.weightRange = .weight65to89Kg
 			case 89...: self.weightRange = .weightGreaterThan89Kg
 			default:
 				print("Unknow aweight")
-				self.weightRange = .weight65_89Kg
+				self.weightRange = .weight65to89Kg
 			}
 		} else {
-			self.weightRange = WeightRange.weight65_89Kg
+			self.weightRange = WeightRange.weight65to89Kg
 		}
 		
 		// Organ failure
@@ -242,14 +246,5 @@ final class SaveScore: ObservableObject {
 		self.bicarbLessThan15 = Parameters(possibleValue: -3, name: "HCO 3 before ECMO ≤15 mmol/L")
 		
 		self.timestamp = Date()
-		
-//		self.ageRange = AgeRange.age18_38
-//		self.weightRange = WeightRange.weight65_89Kg
-	}
-	
-	static var sample: SaveScore {
-		let patient = SaveScore()
-		patient.congenital.selected = true
-		return patient
 	}
 }

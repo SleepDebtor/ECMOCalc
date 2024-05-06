@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Score: Codable {
+	var score: Int = 0
+	var riskClass = ""
+	var survivalPercent = ""
+}
