@@ -24,6 +24,7 @@
 		243674ED2BE8145E00640E5E /* SaveTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674EC2BE8145E00640E5E /* SaveTabView.swift */; };
 		243674EF2BE88AF700640E5E /* RespTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674EE2BE88AF700640E5E /* RespTabView.swift */; };
 		243674F12BE88B1300640E5E /* RespInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674F02BE88B1300640E5E /* RespInfoView.swift */; };
+		279A7D072BEF245B00CB7BE6 /* DeviceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A7D062BEF245B00CB7BE6 /* DeviceRotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		243674EC2BE8145E00640E5E /* SaveTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTabView.swift; sourceTree = "<group>"; };
 		243674EE2BE88AF700640E5E /* RespTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespTabView.swift; sourceTree = "<group>"; };
 		243674F02BE88B1300640E5E /* RespInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespInfoView.swift; sourceTree = "<group>"; };
+		279A7D062BEF245B00CB7BE6 /* DeviceRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceRotation.swift; path = "Resp Score/DeviceRotation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		243674BE2BD9426A00640E5E /* ECMO */ = {
 			isa = PBXGroup;
 			children = (
+				279A7D062BEF245B00CB7BE6 /* DeviceRotation.swift */,
 				243674BF2BD9426A00640E5E /* ECMOApp.swift */,
 				243674C12BD9426A00640E5E /* ContentView.swift */,
 				243674E82BE812A600640E5E /* Save Score */,
@@ -222,6 +225,7 @@
 				243674D62BE491C800640E5E /* RespScoreSD.swift in Sources */,
 				243674D42BDAA53000640E5E /* ParametersSD.swift in Sources */,
 				243674DE2BE54EBA00640E5E /* ScoreStruct.swift in Sources */,
+				279A7D072BEF245B00CB7BE6 /* DeviceRotation.swift in Sources */,
 				243674EF2BE88AF700640E5E /* RespTabView.swift in Sources */,
 				243674C22BD9426A00640E5E /* ContentView.swift in Sources */,
 				243674D82BE517DF00640E5E /* RespCalcView.swift in Sources */,
