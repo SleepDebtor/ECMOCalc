@@ -10,16 +10,22 @@ import SwiftUI
 struct RespInfoView: View {
 	var score: Score
 	
-	func placeLine(width: Double) -> Double {
+	private func placeLine(width: Double) -> Double {
 		let start = 31.0
 		let quantityTicks = width/21
-		var limitedScore = score.score
-		if limitedScore < -8 {
-			limitedScore = -9
-		} else if limitedScore >= 8 {
+		var limitedScore = 0.0
+		if score.score < (-8) {
+			limitedScore = -8.5
+			print("<-8")
+		} else if score.score >= 8 {
 			limitedScore = 8
+			print(">8")
+		} else {
+			limitedScore = Double(score.score)
+			print("basic")
 		}
-		let movement = Double(limitedScore) * quantityTicks
+		let movement = limitedScore * quantityTicks
+		print("Limited Score: \(limitedScore)")
 		return start + movement
 	}
 	
@@ -27,7 +33,7 @@ struct RespInfoView: View {
 		if let score {
 			self.score = score
 		} else {
-			self.score = Score(score: 7,
+			self.score = Score(score: -11,
 							   riskClass: "II",
 							   survivalPercent: "50")
 		}
@@ -37,7 +43,7 @@ struct RespInfoView: View {
 		VStack {
 			Spacer()
 			HStack {
-				Text("Save Score \(score.score)")
+				Text("Resp Score \(score.score)")
 				Spacer()
 				Text("Risk Class \(score.riskClass)")
 				Spacer()
@@ -46,8 +52,8 @@ struct RespInfoView: View {
 			.padding(.vertical)
 			GeometryReader { proxy in
 				ZStack {
-					Color.gray
-						.opacity(0.2)
+					Color.white
+//						.opacity(0.2)
 					Rectangle()
 						.fill(.red)
 						.frame(minWidth: 5, idealWidth: 10, maxWidth: 10, minHeight: 50, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 270, alignment: .leading)
@@ -68,7 +74,7 @@ struct RespInfoView: View {
 			Spacer()
 			Text(RespScore.purposeStr)
 				.font(.caption)
-				.navigationTitle(SaveScore.scoreTitle)
+				.navigationTitle(RespScore.scoreTitle)
 		}
 		.padding()
 	}

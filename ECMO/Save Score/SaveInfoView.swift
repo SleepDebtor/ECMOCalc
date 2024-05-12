@@ -41,8 +41,8 @@ struct SaveInfoView: View {
 			.padding(.vertical)
 			GeometryReader { proxy in
 				ZStack {
-					Color.gray
-						.opacity(0.2)
+					Color.white
+//						.opacity(0.2)
 					Rectangle()
 						.fill(.red)
 						.frame(minWidth: 5, idealWidth: 10, maxWidth: 10, minHeight: 50, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 300, alignment: .leading)

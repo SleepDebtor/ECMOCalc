@@ -16,6 +16,7 @@ struct RespCalcView: View {
 	}
 	
 	var body: some View {
+		VStack {
 		HStack {
 			Text("Resp Score \(patient.score.score)")
 			Spacer()
@@ -26,61 +27,62 @@ struct RespCalcView: View {
 		.padding(.horizontal)
 		Text("")
 		Divider()
-		List {
-			Section("Shock Dx Group") {
-				Picker("Shock Dx Group", selection: $patient.dxGroup) {
-					ForEach(RespScore.DxGroup.allCases) { choice in
-						Text(choice.displayName)
-							.tag(choice)
+			List {
+				Section("Shock Dx Group") {
+					Picker("Shock Dx Group", selection: $patient.dxGroup) {
+						ForEach(RespScore.DxGroup.allCases) { choice in
+							Text(choice.displayName)
+								.tag(choice)
+						}
 					}
 				}
-			}
-			.multilineTextAlignment(.leading)
-			//			.toggleStyle(.button)
-			Section("Age Range") {
-				Picker("Age Range", selection: $patient.ageRange) {
-					ForEach(RespScore.AgeRange.allCases) { choice in
-						Text(choice.displayName)
-							.tag(choice)
+				.multilineTextAlignment(.leading)
+				//			.toggleStyle(.button)
+				Section("Age Range") {
+					Picker("Age Range", selection: $patient.ageRange) {
+						ForEach(RespScore.AgeRange.allCases) { choice in
+							Text(choice.displayName)
+								.tag(choice)
+						}
 					}
-				}
-				.pickerStyle(.segmented)
-			}
-			.pickerStyle(.segmented)
-			Section("PA CO2") {
-				Picker("PA CO2", selection: $patient.paCO2) {
-					ForEach(RespScore.PaCO2.allCases) { choice in
-						Text(choice.displayName)
-							.tag(choice)
-					}
+					.pickerStyle(.segmented)
 				}
 				.pickerStyle(.segmented)
-			}
-			Section("Peak Inspiratory Failure") {
-				Picker("Peak Inspiratory Failure", selection: $patient.peakInspPressure) {
-					ForEach(RespScore.PeakInsPressure.allCases) { choice in
-						Text(choice.displayName)
-							.tag(choice)
+				Section("PA CO2") {
+					Picker("PA CO2", selection: $patient.paCO2) {
+						ForEach(RespScore.PaCO2.allCases) { choice in
+							Text(choice.displayName)
+								.tag(choice)
+						}
 					}
+					.pickerStyle(.segmented)
 				}
-				.pickerStyle(.segmented)
-			}
-			Section("Intubation Duration") {
-				Picker("Intubation Duration", selection: $patient.intubationDuration) {
-					ForEach(RespScore.IntubationDuaration.allCases) { choice in
-						Text(choice.displayName)
-							.tag(choice)
+				Section("Peak Inspiratory Failure") {
+					Picker("Peak Inspiratory Failure", selection: $patient.peakInspPressure) {
+						ForEach(RespScore.PeakInsPressure.allCases) { choice in
+							Text(choice.displayName)
+								.tag(choice)
+						}
 					}
+					.pickerStyle(.segmented)
 				}
-				.pickerStyle(.segmented)
-			}
-			Section("Pre ECMO Organ Failure") {
-				SelectionRow(for: $patient.cns)
-				SelectionRow(for: $patient.acuteNonPulmInfection)
-				SelectionRow(for: $patient.neuroMuscularBlockade)
-				SelectionRow(for: $patient.nitricOxide)
-				SelectionRow(for: $patient.bicarbonateInfusion)
-				SelectionRow(for: $patient.cardiacArrest)
+				Section("Intubation Duration") {
+					Picker("Intubation Duration", selection: $patient.intubationDuration) {
+						ForEach(RespScore.IntubationDuaration.allCases) { choice in
+							Text(choice.displayName)
+								.tag(choice)
+						}
+					}
+					.pickerStyle(.segmented)
+				}
+				Section("Pre ECMO Organ Failure") {
+					SelectionRow(for: $patient.cns)
+					SelectionRow(for: $patient.acuteNonPulmInfection)
+					SelectionRow(for: $patient.neuroMuscularBlockade)
+					SelectionRow(for: $patient.nitricOxide)
+					SelectionRow(for: $patient.bicarbonateInfusion)
+					SelectionRow(for: $patient.cardiacArrest)
+				}
 			}
 		}
 	}
