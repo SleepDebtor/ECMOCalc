@@ -12,7 +12,7 @@ struct RespInfoView: View {
     @State private var orientation = UIDeviceOrientation.portrait
 	
 	func placeLine(width: Double) -> Double {
-		let start = 31.0
+		let start = 202.0
 		let quantityTicks = width/21
 		var limitedScore = score.score
 		if limitedScore < -8 {
@@ -36,21 +36,23 @@ struct RespInfoView: View {
 	
     var body: some View {
         VStack {
-            if orientation.isLandscape {
-                GeometryReader { proxy in
-                    ZStack {
-                        Color.gray
-                            .opacity(0.2)
-                        Rectangle()
-                            .fill(.red)
-                            .frame(minWidth: 5, idealWidth: 10, maxWidth: 10, minHeight: 50, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 300, alignment: .leading)
-                            .offset(x: placeLine(width: proxy.size.width))
-                        Image(ImageResource.respLines)
-                            .resizable()
-                            .scaledToFit()
-                    }
-                }
-                .frame(minWidth: 0, maxWidth: 400, minHeight: 0, maxHeight: 350)            } else {
+			if orientation.isLandscape {
+				
+					ZStack {
+						Color.gray
+							.opacity(0.2)
+						GeometryReader { proxy in
+						Rectangle()
+							.fill(.red)
+							.frame(minWidth: 5, idealWidth: 10, maxWidth: 10, minHeight: 50, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 300, alignment: .leading)
+							.offset(x: placeLine(width: proxy.size.width))
+						Image(ImageResource.respLines)
+							.resizable()
+							.scaledToFit()
+					}
+				}
+//				.frame(minWidth: 0, maxWidth: 400, minHeight: 0, maxHeight: 350)
+			} else {
                     VStack {
                         Spacer()
                         HStack {
@@ -61,10 +63,11 @@ struct RespInfoView: View {
                             Text("Survival \(score.survivalPercent)%")
                         }
                         .padding(.vertical)
-                        GeometryReader { proxy in
+                        
                             ZStack {
                                 Color.gray
                                     .opacity(0.2)
+								GeometryReader { proxy in
                                 Rectangle()
                                     .fill(.red)
                                     .frame(minWidth: 5, idealWidth: 10, maxWidth: 10, minHeight: 50, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 270, alignment: .leading)
