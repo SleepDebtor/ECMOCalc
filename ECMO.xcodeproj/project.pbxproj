@@ -24,6 +24,12 @@
 		243674ED2BE8145E00640E5E /* SaveTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674EC2BE8145E00640E5E /* SaveTabView.swift */; };
 		243674EF2BE88AF700640E5E /* RespTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674EE2BE88AF700640E5E /* RespTabView.swift */; };
 		243674F12BE88B1300640E5E /* RespInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674F02BE88B1300640E5E /* RespInfoView.swift */; };
+		243674F82BF38F0500640E5E /* EncourageSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674F72BF38F0500640E5E /* EncourageSD.swift */; };
+		243674FA2BF3970100640E5E /* EncourageCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674F92BF3970100640E5E /* EncourageCalcView.swift */; };
+		243674FC2BF398C000640E5E /* EncourageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674FB2BF398C000640E5E /* EncourageTabView.swift */; };
+		243674FE2BF3D81200640E5E /* EncourageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674FD2BF3D81200640E5E /* EncourageInfoView.swift */; };
+		243675002BF51CA900640E5E /* CandidateSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243674FF2BF51CA900640E5E /* CandidateSD.swift */; };
+		243675022BF54D0700640E5E /* MainLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243675012BF54D0700640E5E /* MainLineView.swift */; };
 		279A7D072BEF245B00CB7BE6 /* DeviceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A7D062BEF245B00CB7BE6 /* DeviceRotation.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +52,12 @@
 		243674EC2BE8145E00640E5E /* SaveTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTabView.swift; sourceTree = "<group>"; };
 		243674EE2BE88AF700640E5E /* RespTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespTabView.swift; sourceTree = "<group>"; };
 		243674F02BE88B1300640E5E /* RespInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespInfoView.swift; sourceTree = "<group>"; };
+		243674F72BF38F0500640E5E /* EncourageSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncourageSD.swift; sourceTree = "<group>"; };
+		243674F92BF3970100640E5E /* EncourageCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncourageCalcView.swift; sourceTree = "<group>"; };
+		243674FB2BF398C000640E5E /* EncourageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncourageTabView.swift; sourceTree = "<group>"; };
+		243674FD2BF3D81200640E5E /* EncourageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncourageInfoView.swift; sourceTree = "<group>"; };
+		243674FF2BF51CA900640E5E /* CandidateSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateSD.swift; sourceTree = "<group>"; };
+		243675012BF54D0700640E5E /* MainLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLineView.swift; sourceTree = "<group>"; };
 		279A7D062BEF245B00CB7BE6 /* DeviceRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceRotation.swift; path = "Resp Score/DeviceRotation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,8 +91,11 @@
 		243674BE2BD9426A00640E5E /* ECMO */ = {
 			isa = PBXGroup;
 			children = (
+				243674FF2BF51CA900640E5E /* CandidateSD.swift */,
+				243675012BF54D0700640E5E /* MainLineView.swift */,
 				279A7D062BEF245B00CB7BE6 /* DeviceRotation.swift */,
 				243674BF2BD9426A00640E5E /* ECMOApp.swift */,
+				243674F62BF38E7100640E5E /* Encourage Score */,
 				243674C12BD9426A00640E5E /* ContentView.swift */,
 				243674E82BE812A600640E5E /* Save Score */,
 				243674E92BE812FB00640E5E /* Resp Score */,
@@ -123,6 +138,17 @@
 				243674F02BE88B1300640E5E /* RespInfoView.swift */,
 			);
 			path = "Resp Score";
+			sourceTree = "<group>";
+		};
+		243674F62BF38E7100640E5E /* Encourage Score */ = {
+			isa = PBXGroup;
+			children = (
+				243674F72BF38F0500640E5E /* EncourageSD.swift */,
+				243674F92BF3970100640E5E /* EncourageCalcView.swift */,
+				243674FB2BF398C000640E5E /* EncourageTabView.swift */,
+				243674FD2BF3D81200640E5E /* EncourageInfoView.swift */,
+			);
+			path = "Encourage Score";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +247,9 @@
 				243674DC2BE5489F00640E5E /* Protocols.swift in Sources */,
 				243674D22BDA9D9600640E5E /* SelectionRow.swift in Sources */,
 				243674EB2BE8144B00640E5E /* SaveInfoView.swift in Sources */,
+				243675022BF54D0700640E5E /* MainLineView.swift in Sources */,
 				243674D02BD9B44400640E5E /* CalculatorView.swift in Sources */,
+				243675002BF51CA900640E5E /* CandidateSD.swift in Sources */,
 				243674D62BE491C800640E5E /* RespScoreSD.swift in Sources */,
 				243674D42BDAA53000640E5E /* ParametersSD.swift in Sources */,
 				243674DE2BE54EBA00640E5E /* ScoreStruct.swift in Sources */,
@@ -229,7 +257,11 @@
 				243674EF2BE88AF700640E5E /* RespTabView.swift in Sources */,
 				243674C22BD9426A00640E5E /* ContentView.swift in Sources */,
 				243674D82BE517DF00640E5E /* RespCalcView.swift in Sources */,
+				243674FE2BF3D81200640E5E /* EncourageInfoView.swift in Sources */,
 				243674F12BE88B1300640E5E /* RespInfoView.swift in Sources */,
+				243674FA2BF3970100640E5E /* EncourageCalcView.swift in Sources */,
+				243674F82BF38F0500640E5E /* EncourageSD.swift in Sources */,
+				243674FC2BF398C000640E5E /* EncourageTabView.swift in Sources */,
 				243674ED2BE8145E00640E5E /* SaveTabView.swift in Sources */,
 				243674C42BD9426A00640E5E /* SaveScoreSD.swift in Sources */,
 				243674C02BD9426A00640E5E /* ECMOApp.swift in Sources */,

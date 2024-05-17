@@ -61,3 +61,24 @@ extension SaveScore: TheScore {
 		return patient
 	}
 }
+extension EncourageScore: TheScore {
+	static func == (lhs: EncourageScore, rhs: EncourageScore) -> Bool {
+		lhs.timestamp > rhs.timestamp
+	}
+	
+	func scoreConsultReport() -> String {
+		let consultStr = "The SAVE Score has been developed by ELSO and The Department of Intensive Care at The Alfred Hospital, Melbourne. It is designed to assist prediction of survival for adult patients undergoing Extra-Corporeal Membrane Oxygenation for respiratory failure. While is is not a substitute for clinical assessment it has been welll validated. Based on the data available, the calculated RESP score is \(score.score). This score is associated with Risk Class \(score.riskClass) and an average survival of \(score.survivalPercent)%. "
+		return consultStr
+	}
+	
+	static let scoreTitle = "Encourage Score"
+	
+	static let citationStr = "Muller G, Flecher E, Lebreton G, Luyt CE, Trouillet JL, Bréchot N, Schmidt M, Mastroianni C, Chastre J, Leprince P, Anselmi A, Combes A. The ENCOURAGE mortality risk score and analysis of long-term outcomes after VA-ECMO for acute myocardial infarction with cardiogenic shock. Intensive Care Med. 2016 Mar;42(3):370-378. doi: 10.1007/s00134-016-4223-9. Epub 2016 Jan 29. PMID: 26825953."
+	
+	static let purposeStr = "This study was designed to identify factors associated with in-intensive care unit (ICU) death and develop a practical mortality risk score for venoarterial-extracorporeal membrane oxygenation (VA-ECMO)-treated acute myocardial infarction (AMI) patients. Long-term survivors' health-related quality of life (HRQOL), anxiety, depression, and post-traumatic stress disorder (PTSD) frequencies were also assessed."
+	
+	var sample: EncourageScore {
+		let patient = EncourageScore()
+		return patient
+	}
+}

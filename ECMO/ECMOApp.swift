@@ -13,7 +13,8 @@ struct ECMOApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
 			SaveScore.self,
-			RespScore.self
+			RespScore.self,
+			Candidate.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
